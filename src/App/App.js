@@ -47,7 +47,7 @@ function App() {
       label: '',
     },
     {
-      value: 1591,
+      value: 1590,
       label: '',
     },
     {
@@ -70,6 +70,7 @@ function App() {
       acontecimentos: [
         {
           nome: 'Anaxágoras',
+          imageURL:'http://www.percepolegatto.com.br/wp-content/uploads/2012/02/Anax%C3%A1goras-1.jpg',
           tempo: -480,
           descricao: "Filósofo pré-socrático",
           local: 'Atenas',
@@ -84,11 +85,16 @@ function App() {
         },
         {
           nome: 'Aristóteles',
+          imageURL:'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcTrSEc8OGf_Xs2IbGmlwZjSW19Q9HHXwEQHIIIxx7xHw_c8u_QFdoOHj9DQvNQyNUtZ',
           tempo: -384,
           descricao: "Filósofo",
           local: 'Atenas',
           sobre: [
-            
+            "Desenvolve a fisica e cosmologia aristotélica",
+          ],
+          links: [
+            'https://drive.google.com/file/d/15hDnarP39SSUzdeITifTPFujKL8K9Fm_/view',
+            'https://www.ebiografia.com/aristoteles/'
           ]
         }
       ]
@@ -96,27 +102,156 @@ function App() {
     {
       paisNome: "Germany",
       acontecimentos: [
+        {
+          nome: 'Tycho Brahe',
+          imageURL:'https://upload.wikimedia.org/wikipedia/commons/2/2b/Tycho_Brahe.JPG',
+          tempo: 1550,
+          descricao: "Astronomo",
+          local: 'Berlin',
+          sobre: [
+            "Mapeou a posição de 777 estrelas e dos 5 planetas.",
+            "Atuou com rigor e método na astronomia observacional",
+          ],
+          links: [
+            "https://www3.unicentro.br/petfisica/2015/12/22/tycho-brahe-1546-1601/",
+            "https://drive.google.com/file/d/14oUU7n8jnTT_pkRG76roYGz1BJUvrLIy/view"
+          ]
+        },
+        {
+          nome: 'Johannes Kepler',
+          imageURL:'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTAmDPW6atg9H2W88joHvHvgXnS-6qu9LWmI4sLYmN72sdu-oLGKQeVBJMlPWhbDtVh',
+          tempo: 1590,
+          descricao: "Astronomo",
+          local: 'Berlin',
+          sobre: [
+            "Desenvolveu o método de análise de orbitas",
+          ],
+          links: [
+            "https://www.ebiografia.com/johannes-kepler/",
+            "https://drive.google.com/file/d/1bAEGYbhfZIDawl_bYrszMovhzaPT_XSw/view"
+          ]
+        } 
       ]
     },
     {
       paisNome: "Egypt",
-      acontecimentos: []
+      acontecimentos: [
+        {
+          nome: 'Eratóstenes',
+          imageURL:'https://www.suapesquisa.com/uploads/site/erastostenes_de_cirene.jpg',
+          tempo: -235,
+          descricao: "Filósofo",
+          local: 'Alexandria',
+          sobre: [
+            "Fez a primeira medida de circunferência da terra"
+          ],
+          links: [
+            'https://www.suapesquisa.com/quemfoi/eratostenes.htm'
+          ]   
+        },
+        {
+          nome: 'Ptolomeu',
+          imageURL: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Ptolemy_16century.jpg',
+          tempo: -200,
+          descricao: "Matemático, Filósofo",
+          local: 'Alexandria',
+          sobre: [
+            'Desenvolvimento de trabalhos matemáticos e astronomicos'
+          ],
+          links: [
+            'https://drive.google.com/file/d/147jzzDT2ubp67Qt_snQUbe-FgHDzQeEl/view',
+            'https://www.infoescola.com/biografias/ptolomeu/'
+          ]
+        }
+      ]
     },
     {
       paisNome: "Poland",
-      acontecimentos: []
+      acontecimentos: [
+        {
+          nome: 'Copérnico',
+          imageURL: 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTk3MLLhpqomzQbMxNAuWdG2vmlHmNwAmOCkDY6ungMBw1uuQSGHS3tZHAqimvFLhlk',
+          tempo: 1473,
+          descricao: "Filósofo",
+          local: 'Torún',
+          sobre: [
+            'Desenvolvimento da teoria heliocêntrica do sistema solar'
+          ],
+          links: [
+            'https://drive.google.com/file/d/14oUU7n8jnTT_pkRG76roYGz1BJUvrLIy/view?usp=drive_web&authuser=2'
+          ]
+        }
+      ]
     },
     {
       paisNome: "Italy",
-      acontecimentos: []
+      acontecimentos: [
+        {
+          nome: 'Giordano Bruno',
+          imageURL: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Giordano_Bruno.jpg',
+          tempo: 1600,
+          descricao: "Filósofo e Matemático",
+          local: 'Nola',
+          sobre: [
+            "Cosmologia do universo infinito"
+          ],
+          links: [
+            "https://drive.google.com/file/d/1zTQFW2Uv9caCiQOUbKgFC_ordDXmzOdx/view"
+          ]
+        },
+        {
+          nome: 'Galileo',
+          imageURL: 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTDKMVgF10wstCLHgZzHmLeG89LEz6Z9iGJmFK-xtZ4Q09-OU0gLUfFuWr6mUV7z9Rd',
+          tempo: 1590,
+          descricao: "Astronomo",
+          local: 'Roma',
+          sobre: [
+            'Pai da astronomia observacional',
+            'Pai do método ciêntifico'
+          ],
+          links: [
+            'https://www.ebiografia.com/galileu_galilei/',
+            'https://drive.google.com/file/d/1fFvjrKNWugyhDe4spcw7K-gRoY8Z92A-/view?usp=drive_web&authuser=2'
+          ]
+        }
+      ]
     },
     {
       paisNome: "France",
-      acontecimentos: []
+      acontecimentos: [
+        {
+          nome: 'René Descartes',
+          tempo: 1628,
+          descricao: "Filósofo e Matemático",
+          local: 'Paris',
+          sobre: [
+            'Penso, logo existo',
+            'Desenvolvimento do método analitico na busca pela verdade',
+            "O Discurso sobre o Método"
+          ],
+          links: [
+            'https://drive.google.com/file/d/1zTQFW2Uv9caCiQOUbKgFC_ordDXmzOdx/view',
+            'https://www.todamateria.com.br/descartes/'
+          ]
+        }
+      ]
     },
     {
       paisNome: "United Kingdom",
-      acontecimentos: []
+      acontecimentos: [
+        {
+          nome: 'Isaac Newton',
+          tempo: 1642,
+          descricao: "Filósofo e Matemático",
+          local: 'Londres',
+          sobre: [
+            'Desenvolvimento do cálculo e da física newtoniana',
+          ],
+          links: [
+            "https://drive.google.com/file/d/1mtDOykU2hf8wFzZVO135rB6LunHIPOPT/view?usp=drive_web&authuser=2"
+          ]
+        }
+      ]
     },
   ]
 
@@ -173,7 +308,7 @@ function App() {
     points.forEach(point => {
       point.acontecimentos.forEach(acontecimento => {
         if (acontecimento.tempo === time) {
-          if(point.paisNome == name){
+          if(point.paisNome === name){
             acontecimentos.push(acontecimento);
           }
         }
@@ -189,6 +324,72 @@ function App() {
       return colorScale(getVal(d));
     }
     return 'steelblue'
+  }
+
+  const getAcontecimentoFromTimeAndPais = (pais) => {
+    var time = sliderLastValue;
+    const acontecimentos = [];
+    points.forEach(point => {
+      point.acontecimentos.forEach(acontecimento => {
+        if (acontecimento.tempo === time) {
+          if(point.paisNome === pais){
+            acontecimentos.push(acontecimento);
+          }
+        }
+      })
+    }
+    )
+
+
+    return acontecimentos;
+  }
+
+  const getPopUpContentFromAcontecimentos = (acontecimentos) => {
+    var contentWithBlackBackgrund = '<div style=" border-radius:10px; background-color: #ED8975; color: white; padding-right: 10px; padding-left: 10px; padding-bottom: 1px; padding-top: 1px;">';
+    //space between items is 10px
+    acontecimentos.forEach(acontecimento => {
+      // colocar nome ao lado de imageURL
+      contentWithBlackBackgrund += '<div style="display: flex; justify-content: flex-start; align-items:center "><img src="' + acontecimento.imageURL + '" style="width: 100px; height: 100px; border-radius: 50%"><h2 style="margin-left: 10px;">' + acontecimento.nome + '</h2></div>';
+      // // add nome and round imageURL from acontecimento 
+      // contentWithBlackBackgrund += '<h3 style="padding-bottom: 6px;"><b>' + acontecimento.nome + '</b></h3>';
+      // contentWithBlackBackgrund += '<div style="padding-bottom: 10px;"><img src="' + acontecimento.imageURL + '" style="border-radius:50%; width: 50px; height: 50px;"></div>';
+
+      // Title Ocupação
+      contentWithBlackBackgrund += "<h4>Ocupação</h4>";
+      contentWithBlackBackgrund += "<p>" + acontecimento.descricao + "</p>";
+
+      // Title Local
+      contentWithBlackBackgrund += "<h4>Local</h4>";
+      contentWithBlackBackgrund += "<p>" + acontecimento.local + "</p>";
+      
+      // Title Sobre
+      contentWithBlackBackgrund += "<h4>Sobre</h4>";
+      // bullet list with sobre
+      contentWithBlackBackgrund += "<ul>";
+      acontecimento.sobre.forEach(sobre => {
+        contentWithBlackBackgrund += "<li>" + sobre + "</li>";
+      })
+      contentWithBlackBackgrund += "</ul>";
+
+      // Title Links
+      contentWithBlackBackgrund += "<h4>Links</h4>";
+      //bullet list with links to acontecimentos
+      contentWithBlackBackgrund += "<ul>";
+      acontecimento.links.forEach(link => {
+        contentWithBlackBackgrund += "<li><a href=\"" + link + "\">" + link + "</a></li>";
+      })
+      }
+    )
+    contentWithBlackBackgrund += "</div>";
+    return contentWithBlackBackgrund;
+  }
+
+  const makePopUpToShowInfoAboutAcontecimentos = (pais) => {
+    var acontecimentos = getAcontecimentoFromTimeAndPais(pais.properties.GEOUNIT);
+    if(acontecimentos.length > 0) {
+ 
+      return getPopUpContentFromAcontecimentos(acontecimentos)
+    }
   }
 
   return (
@@ -222,9 +423,7 @@ function App() {
           polygonCapColor={decideColor}//d => d !== hoverD ? 'steelblue' : colorScale(getVal(d))}
           polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
           polygonStrokeColor={() => '#111'}
-          polygonLabel={({ properties: d }) => `
-
-          `}
+          polygonLabel={makePopUpToShowInfoAboutAcontecimentos}
           onPolygonHover={setHoverD}
           polygonsTransitionDuration={300}
         />
