@@ -11,7 +11,11 @@ function App() {
   const backgroundColor = "#e0e0e0"
 
   const globeEl = React.useRef();
-  const [sliderLastValue, setSliderLastValue] = React.useState(0);
+  const [sliderLastValue, setSliderLastValue] = React.useState(-480);
+  const { useState, useEffect, useMemo } = React;
+
+  const [countries, setCountries] = useState({ features: []});
+  const [hoverD, setHoverD] = useState();
 
   const marks = [
     {
@@ -60,8 +64,61 @@ function App() {
     }
   ]
 
-
-  const pointsData = []
+  const points = [
+    {
+      paisNome: "Greece",
+      acontecimentos: [
+        {
+          nome: 'Anaxágoras',
+          tempo: -480,
+          descricao: "Filósofo pré-socrático",
+          local: 'Atenas',
+          sobre: [
+            "Descobriu a verdadeira causa dos eclipses.",
+            "Afirmou que o Sol era uma pedra de fogo maior que o Peloponeso",
+            "Iniciou a atitude questionadora que traria ao desenvolvimento do método ciêntifico"
+          ],
+          links: [
+            'https://www.ebiografia.com/anaxagoras/'
+          ]
+        },
+        {
+          nome: 'Aristóteles',
+          tempo: -384,
+          descricao: "Filósofo",
+          local: 'Atenas',
+          sobre: [
+            
+          ]
+        }
+      ]
+    },
+    {
+      paisNome: "Germany",
+      acontecimentos: [
+      ]
+    },
+    {
+      paisNome: "Egypt",
+      acontecimentos: []
+    },
+    {
+      paisNome: "Poland",
+      acontecimentos: []
+    },
+    {
+      paisNome: "Italy",
+      acontecimentos: []
+    },
+    {
+      paisNome: "France",
+      acontecimentos: []
+    },
+    {
+      paisNome: "United Kingdom",
+      acontecimentos: []
+    },
+  ]
 
   const rotateGlobeBasedOnPreviousValue = (value) => {
     if (sliderLastValue > value) {
@@ -88,12 +145,7 @@ function App() {
     return "ano " + value
   }
 
-  const { useState, useEffect, useMemo } = React;
 
-  const [countries, setCountries] = useState({ features: []});
-  const [hoverD, setHoverD] = useState();
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // load data
     fetch(data, {
@@ -103,8 +155,6 @@ function App() {
        }
 
     }).then(res => res.json()).then(setCountries);
-      
-    console.log(countries)
   }, []);
 
   const colorScale = scaleSequentialSqrt(interpolateYlOrRd);
@@ -118,6 +168,29 @@ function App() {
   );
   colorScale.domain([0, maxVal]);
 
+  const givenTimeGetAcontecimentos = (name, time) => {
+    const acontecimentos = [];
+    points.forEach(point => {
+      point.acontecimentos.forEach(acontecimento => {
+        if (acontecimento.tempo === time) {
+          if(point.paisNome == name){
+            acontecimentos.push(acontecimento);
+          }
+        }
+      })
+    }
+    )
+    return acontecimentos;
+  }
+
+  const decideColor = (d) => {
+    const dHasTempo = givenTimeGetAcontecimentos(d.properties.GEOUNIT, sliderLastValue)
+    if(dHasTempo.length > 0) {
+      return colorScale(getVal(d));
+    }
+    return 'steelblue'
+  }
+
   return (
     <div className="App">   
       <div className="slider">
@@ -127,7 +200,7 @@ function App() {
           max={1642}
           aria-label="Temperature"
           valueLabelDisplay="auto"
-          defaultValue={0}
+          defaultValue={-480}
           color="secondary"
           valueLabelFormat={getAriaValueText}
           marks={marks}
@@ -145,8 +218,8 @@ function App() {
           lineHoverPrecision={0}
           
           polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
-          polygonAltitude={d => d === hoverD ? 0.12 : 0.06}
-          polygonCapColor={d => d === hoverD ? 'steelblue' : colorScale(getVal(d))}
+          polygonAltitude={d => d === hoverD ? 0.12 : 0.01}
+          polygonCapColor={decideColor}//d => d !== hoverD ? 'steelblue' : colorScale(getVal(d))}
           polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
           polygonStrokeColor={() => '#111'}
           polygonLabel={({ properties: d }) => `
