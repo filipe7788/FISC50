@@ -392,6 +392,13 @@ function App() {
     }
   }
 
+  const decideElevation = (d) => {
+    const dHasTempo = givenTimeGetAcontecimentos(d.properties.GEOUNIT, sliderLastValue)
+    if(dHasTempo.length > 0) {
+      return d === hoverD ? 0.12 : 0.01
+    }
+    return 0.01
+  }
   return (
     <div className="App">   
       <div className="slider">
@@ -419,7 +426,7 @@ function App() {
           lineHoverPrecision={0}
           
           polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
-          polygonAltitude={d => d === hoverD ? 0.12 : 0.01}
+          polygonAltitude={decideElevation}
           polygonCapColor={decideColor}//d => d !== hoverD ? 'steelblue' : colorScale(getVal(d))}
           polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
           polygonStrokeColor={() => '#111'}
