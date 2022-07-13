@@ -345,7 +345,8 @@ function App() {
   }
 
   const getPopUpContentFromAcontecimentos = (acontecimentos) => {
-    var contentWithBlackBackgrund = '<div style=" border-radius:10px; background-color: #ED8975; color: white; padding-right: 10px; padding-left: 10px; padding-bottom: 1px; padding-top: 1px;">';
+    
+    var contentWithBlackBackgrund = '<div style="border-radius:10px; background-color: #ED8975; color: white; padding-right: 10px; padding-left: 10px; padding-bottom: 1px; padding-top: 1px;">';
     //space between items is 10px
     acontecimentos.forEach(acontecimento => {
       // colocar nome ao lado de imageURL
@@ -399,9 +400,11 @@ function App() {
     }
     return 0.01
   }
+
   return (
     <div className="App">   
       <div className="slider">
+        <a><b>Linha do tempo</b></a>
         <Slider
           min={-480}
           step={null}
