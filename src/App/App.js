@@ -404,7 +404,7 @@ function App() {
   return (
     <div className="App">   
       <div className="slider">
-        <a><b>Linha do tempo</b></a>
+        <p href='time_line'><b>Linha do tempo</b></p>
         <Slider
           min={-480}
           step={null}
